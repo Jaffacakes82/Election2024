@@ -1,0 +1,17 @@
+﻿.btn-ask-another {
+    background-color: #212529;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+    .btn-ask-another:hover {
+        background-color: #343a40;
+        transform: translateY(-1px);
+    }
+
+p {
+    white-space: pre-wrap;
+}

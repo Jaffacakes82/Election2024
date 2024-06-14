@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Election2024.Web", "Election2024.Web\Election2024.Web.csproj", "{3B737D8A-6500-45FA-BAA3-A335CC80BBEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Election2024.Web", "Election2024.Web\Election2024.Web.csproj", "{3B737D8A-6500-45FA-BAA3-A335CC80BBEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Election2024.Infrastructure", "Election2024.Infrastructure\Election2024.Infrastructure.csproj", "{ACA2179D-400B-4BF8-9E25-9B36CFEA3E51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Election2024.Domain", "Election2024.Domain\Election2024.Domain.csproj", "{272EA691-55F0-4D0B-9F0E-2D0045338EAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3B737D8A-6500-45FA-BAA3-A335CC80BBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B737D8A-6500-45FA-BAA3-A335CC80BBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B737D8A-6500-45FA-BAA3-A335CC80BBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA2179D-400B-4BF8-9E25-9B36CFEA3E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA2179D-400B-4BF8-9E25-9B36CFEA3E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA2179D-400B-4BF8-9E25-9B36CFEA3E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA2179D-400B-4BF8-9E25-9B36CFEA3E51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{272EA691-55F0-4D0B-9F0E-2D0045338EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272EA691-55F0-4D0B-9F0E-2D0045338EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{272EA691-55F0-4D0B-9F0E-2D0045338EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{272EA691-55F0-4D0B-9F0E-2D0045338EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

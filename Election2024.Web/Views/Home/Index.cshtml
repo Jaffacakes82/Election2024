@@ -1,8 +1,58 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model QuestionModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="search-container">
+        <h1 class="display-4 mb-2 fs-2">UK Election 2024 Manifesto Search</h1>
+        <p class="lead mb-4 fs-6">Find detailed information and answers about the political manifestos for the upcoming UK election.</p>
+
+        @if (string.IsNullOrWhiteSpace(Model.QuestionAnswer))
+        {
+            <div class="accordion mb-4" id="exampleQuestionsAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Example Questions
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#exampleQuestionsAccordion">
+                        <div class="accordion-body">
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    What is the Green Party's approach to taxation?
+                                </div>
+                            </div>
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    How does the Labour Party plan to address climate change?
+                                </div>
+                            </div>
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    Summarise the differences between the Conservative's and Labour's heathcare policies                          </div>
+                            </div>
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    What is the Liberal Democrats' stance on education reform?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (string.IsNullOrWhiteSpace(Model.QuestionAnswer))
+        {
+            <div id="searchSection">
+                @await Html.PartialAsync("_SearchForm", Model)
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.QuestionAnswer))
+        {
+            <div id="answerSection">
+                @await Html.PartialAsync("_AnswerView", Model)
+            </div>
+        }
+    </div>
 </div>

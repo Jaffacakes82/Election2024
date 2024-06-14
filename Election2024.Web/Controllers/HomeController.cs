@@ -1,3 +1,4 @@
+using Election2024.Infrastructure.Interfaces;
 using Election2024.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,20 +8,30 @@ namespace Election2024.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IOpenAIService openAIService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IOpenAIService openAIService)
         {
             _logger = logger;
+            this.openAIService = openAIService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(new QuestionModel());
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<IActionResult> Index(QuestionModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = await this.openAIService.AskQuestionAsync(model.QuestionText);
+            model.QuestionAnswer = response;
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
