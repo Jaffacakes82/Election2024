@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Election2024.Infrastructure\Election2024.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.37.0" />
+  </ItemGroup>
+
 </Project>

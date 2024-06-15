@@ -1,4 +1,9 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿if (document.getElementById('searchForm')) {
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        document.getElementById('searchSection').style.display = 'none'; // Hide the search section
+        document.getElementById('loadingSpinner').style.display = 'block'; // Show the loading spinner
 
-// Write your JavaScript code.
+        event.target.submit();
+    });
+}

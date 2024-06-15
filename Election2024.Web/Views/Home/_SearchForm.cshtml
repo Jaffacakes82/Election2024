@@ -1,5 +1,5 @@
 ﻿@model QuestionModel
-<form asp-action="Index" method="post">
+<form asp-action="Index" method="post" id="searchForm">
     <div class="d-flex justify-content-center">
         <input type="text" asp-for="QuestionText" class="form-control search-bar me-2" placeholder="Ask your question about the UK election manifestos...">
         <button type="submit" class="btn btn-search">Ask</button>

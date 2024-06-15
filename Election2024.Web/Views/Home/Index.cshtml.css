@@ -45,7 +45,6 @@
 
 .lead {
     font-weight: 300;
-    margin-bottom: 30px;
 }
 
 .accordion-button:not(.collapsed) {
@@ -56,4 +55,43 @@
 .card-body {
     font-size: 16px;
     color: #333;
+}
+
+.loading-spinner {
+    display: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+    .loading-spinner i {
+        margin-right: 10px;
+        color: #343a40; /* Dark theme color */
+    }
+
+    .loading-spinner p {
+        margin: 0;
+        color: #343a40; /* Dark theme color */
+        font-size: 1.5rem;
+    }
+
+.party-links {
+    display:block;
+    margin-bottom: 20px;
+}
+
+.party-link {
+    display:block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #343a40;
+}
+
+.party-logo {
+    width: 30px;
+    height: auto;
+}
+
+.party-link:hover {
+    color: #007bff;
 }
