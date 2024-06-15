@@ -18,6 +18,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Conservatives_logo.svg" alt="Conservative Party Logo" class="party-logo"> Tory Manifesto
             </a>
         </div>
+        <p><i><b>NOTE:</b> Under the hood, this bot is using an OpenAI Assistant powered by GPT-3.5-turbo. I'm still getting to grips with token rate limits, and as the manifestos are provided to the model as input via RAG, you may find that these rate limits get reached.</i></p>
 
 
         @if (string.IsNullOrWhiteSpace(Model.QuestionAnswer))
