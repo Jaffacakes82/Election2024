@@ -4,8 +4,8 @@
     border: none;
     border-radius: 6px;
     padding: 14px 20px;
-    margin-left: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 62px;
 }
 
     .btn-search:hover {
@@ -13,19 +13,9 @@
         transform: translateY(-1px);
     }
 
-@media (max-width: 500px) {
-    .search-container {
-        flex-direction: column;
-    }
-
+@media (max-width: 768px) {
     .btn-search {
-        background-color: #212529;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 14px 20px;
-        margin-left: 0px;
-        margin-top: 10px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        width: 100%;
+        margin-top: 1rem;
     }
 }

@@ -1,8 +1,13 @@
 ﻿@model QuestionModel
 <form asp-action="Index" method="post" id="searchForm">
-    <div class="d-flex justify-content-center search-container">
-        <textarea type="text" asp-for="QuestionText" class="form-control search-bar" placeholder="Ask your question about the UK election manifestos..."></textarea>
-        <button type="submit" class="btn btn-search">Ask</button>
+    <div class="row justify-content-between g-0">
+        <div class="col-12 col-md-10">
+            <textarea type="text" asp-for="QuestionText" class="form-control search-bar" placeholder="Ask your question about the UK election manifestos..."></textarea>
+            <small class="form-text text-muted d-block">Maximum 200 characters.</small>
+        </div>
+        <div class="col-md-2 col-12 text-end">
+            <button type="submit" class="btn btn-search">Ask</button>
+        </div>
     </div>
     <span asp-validation-for="QuestionText" class="text-danger"></span>
 </form>
