@@ -18,12 +18,12 @@
                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Conservatives_logo.svg" alt="Conservative Party Logo" class="party-logo"> Tory Manifesto
             </a>
         </div>
-        <p><i><b>NOTE:</b> Under the hood, this bot is using an OpenAI Assistant powered by GPT-3.5-turbo. I'm still getting to grips with token rate limits, and as the manifestos are provided to the model as input via RAG, you may find that these rate limits get reached.</i></p>
+        <p><i><b>NOTE:</b> Under the hood, this bot is using an OpenAI Assistant powered by GPT-4o. I'm still getting to grips with token rate limits, and as the manifestos are provided to the model as input via RAG, you may find that these rate limits get reached.</i></p>
 
 
         @if (string.IsNullOrWhiteSpace(Model.QuestionAnswer))
         {
-            <div class="accordion mb-4" id="exampleQuestionsAccordion">
+            <div class="accordion mb-3" id="exampleQuestionsAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -65,7 +65,7 @@
             </div>
         }
 
-        @if (!string.IsNullOrWhiteSpace(Model.QuestionAnswer))
+        @if (!string.IsNullOrWhiteSpace(Model.QuestionAnswer) || Model.Failed)
         {
             <div id="answerSection">
                 @await Html.PartialAsync("_AnswerView", Model)
@@ -73,7 +73,7 @@
         }
 
         <div class="loading-spinner" id="loadingSpinner">
-            <i class="fas fa-sync fa-spin"></i>
+            <i class="fas fa-sync fa-fast-spin"></i>
             <p class="fs-6">Analysing manifestos. This might take a few seconds.</p>
         </div>
 

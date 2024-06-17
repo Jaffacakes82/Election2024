@@ -1,6 +1,15 @@
 ﻿@model QuestionModel
 <div id="answerContainer" class="answer-container">
-    <h2 class="h5">Here's what the manifestos say</h2>
-    <p id="answerText">@Html.MarkdownToHtml(@Model.QuestionAnswer)</p>
-    <a href="/" id="askAnotherQuestion" class="btn btn-ask-another">Ask Another Question</a>
+    @if (!Model.Failed)
+    {
+        <h2 class="h5">Here's what the manifestos say</h2>
+        <p id="answerText">@Html.MarkdownToHtml(@Model.QuestionAnswer)</p>
+        <a href="/" id="askAnotherQuestion" class="btn btn-ask-another">Ask Another Question</a>
+    }
+    else
+    {
+        <div class="alert alert-danger mt-2 mb-0" role="alert">
+            Ah, something went wrong. Trying again in a few seconds.
+        </div>
+    }
 </div>

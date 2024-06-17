@@ -29,8 +29,18 @@ namespace Election2024.Web.Controllers
                 return View();
             }
 
-            var response = await this.openAIService.AskQuestionAsync(model.QuestionText);
-            model.QuestionAnswer = response;
+            try
+            {
+                var response = await this.openAIService.AskQuestionAsync(model.QuestionText);
+                model.QuestionAnswer = response;
+            }
+            catch (Exception e)
+            {
+                this._logger.LogCritical(e, "Failed to call OpenAI API service.");
+                model.QuestionAnswer = string.Empty;
+                model.Failed = true;
+            }
+
             return View(model);
         }
 

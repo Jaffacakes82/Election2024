@@ -8,4 +8,5 @@ public class QuestionModel
     [MaxLength(100)]
     public string QuestionText { get; set; } = string.Empty;
     public string QuestionAnswer { get; set; } = string.Empty;
+    public bool Failed { get; set; } = false;
 }
