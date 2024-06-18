@@ -26,7 +26,7 @@ namespace Election2024.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
 
             try
